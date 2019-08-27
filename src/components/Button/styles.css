@@ -1,0 +1,103 @@
+button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.button {
+  --color: #ffffff;
+  --color-bg-hover: #ffffff1a;
+  --color-bg-active: #ffffff4a;
+  --border-radius: 9999px;
+  --padding-v: 10px;
+  --padding-h: 20px;
+  --margin-v: 0px;
+  --margin-h: 0px;
+  --font-size: 18px;
+  --icon-size: 24px;
+
+  display: flex;
+  font-size: var(--font-size);
+  font-weight: 500;
+  color: var(--color);
+  padding: var(--padding-v) var(--padding-h);
+  margin: var(--margin-v) var(--margin-h);
+  border-radius: var(--border-radius);
+  outline: none;
+  transition: all 0.2s;
+}
+
+.button i,
+a,
+p {
+  font-size: var(--icon-size);
+  color: var(--color);
+}
+
+.button:hover {
+  background-color: var(--color-bg-hover);
+}
+
+.button:active,
+.button:focus {
+  background-color: var(--color-bg-active);
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.outlined {
+  border: 1px solid var(--color);
+}
+.filled {
+  color: var(--color);
+  background-color: var(--bg);
+}
+
+.filled:hover {
+  background-color: var(--color-bg-hover);
+}
+
+.filled:active,
+.button:focus {
+  background-color: var(--color-bg-active);
+}
+
+.disabled,
+.disabled:active,
+.disabled:hover,
+.disabled:focus {
+  background-color: #e0e0e0;
+  color: #b6b6b6;
+  cursor: default;
+  border-color: #b6b6b6;
+}
+
+.disabled i {
+  color: #b6b6b6;
+}
+
+.disabled .loader {
+  border-top: 3px solid #b6b6b6;
+}
+
+.loader {
+  border: 3px solid #f3f3f3; /* Light grey */
+  border-top: 3px solid var(--color); /* Blue */
+  border-radius: 50%;
+  width: var(--font-size);
+  height: var(--font-size);
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

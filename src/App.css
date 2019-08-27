@@ -1,33 +1,107 @@
-.App {
-  text-align: center;
+:root {
+  --text: #1e1e24;
+  --blue: #8ee3ef;
+  --red: #c33c54;
+  --white: #ffffffd7;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: var(--text);
+  max-width: 1280px;
+  padding: 0 10px;
+  margin: auto auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+* {
+  transition: all 0.3s;
+  color: var(--white);
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+a:hover {
+  color: var(--red) !important;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
+  grid-gap: 10px;
+}
+
+.card {
+  background: var(--blue);
+  border-radius: 7px;
+  cursor: pointer;
+  animation: card-appear 0.5s;
+  font-weight: 500;
+  overflow: hidden;
+  min-height: 100px;
+}
+
+.card div {
+  padding: 10px;
+}
+
+.card--title {
+  background-color: #0000001a;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+}
+
+@keyframes card-appear {
+  0% {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.cart {
+  border-top: 10px red solid;
+  margin-right: 200px;
+}
+
+.card a {
+  color: var(--text);
+  font-size: 16px;
+}
+.card p {
+  color: var(--text);
+  font-size: 16px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 3px 1px var(--red);
+}
+.author:hover {
+  color: var(--red);
+}
+
+.card-load-more {
+  background: var(--blue);
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
+  font-size: 36px !important;
 }
 
-.App-link {
-  color: #61dafb;
+.card-load-more a {
+  font-size: 36px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#loading {
+  font-size: 48px;
+  color: var(--red);
 }
